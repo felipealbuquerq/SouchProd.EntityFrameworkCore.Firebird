@@ -74,7 +74,7 @@ namespace Microsoft.EntityFrameworkCore.Update.Internal
                 if (connection.CurrentTransaction == null)
                 {
                     // ReSharper disable once PossibleNullReferenceException
-                    startedTransaction = await (connection as FbRelationalConnection).BeginTransactionAsync(cancellationToken).ConfigureAwait(false) as FirebirdRelationalTransaction;
+                    startedTransaction = await (connection as FbRelationalConnection).BeginTransactionAsync(cancellationToken).ConfigureAwait(false) as FbRelationalTransaction;
                 }
 
                 foreach (var commandbatch in commandBatches)
